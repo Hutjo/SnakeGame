@@ -279,7 +279,6 @@ class Game
             
             // Draw current score 
             DrawText(TextFormat("Score: %i", score), offset - 5, 20, 40, BLACK);
-            //DrawText(TextFormat("High Score: %i", highscoreManager.GetHighscore()), offset - 5, 70, 40, BLACK);
             
             if(paused) {
                 DrawText("PAUSE", offset + cellSize * cellCount / 2 - 40, 
@@ -290,7 +289,7 @@ class Game
 
     void DrawHighScores() {
         ClearBackground(blue);
-        DrawText("HIGH SCORES", offset-5, 70, 40, BLACK);
+        DrawText("HIGH SCORES", offset-10, 7, 40, BLACK);
         
         auto scores = highscoreManager.GetTopScores(10);
         int yPos = 120;
@@ -420,9 +419,7 @@ int main ()
 
         ClearBackground(blue);
         DrawRectangleLinesEx(Rectangle{(float)offset - 5, (float)offset - 5, (float)cellSize * cellCount + 10, (float)cellSize * cellCount + 10}, 5, BLACK);
-        //DrawText(TextFormat("%i", game.score), offset -5, 20, 40, BLACK);
         game.Draw();
-
         EndDrawing();
     }
 
